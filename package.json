@@ -1,0 +1,35 @@
+{
+  "name": "gql-api-server",
+  "version": "1.0.0",
+  "description": "A simple GraphQl API server built with NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HurayraIIT/gql-api-server.git"
+  },
+  "keywords": [
+    "graphql",
+    "nodejs",
+    "express"
+  ],
+  "author": "Abu Hurayra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HurayraIIT/gql-api-server/issues"
+  },
+  "homepage": "https://github.com/HurayraIIT/gql-api-server#readme",
+  "dependencies": {
+    "@graphql-tools/schema": "^9.0.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^14.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "type": "module"
+}
