@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { graphqlHTTP } from 'express-graphql'
 import { makeExecutableSchema } from '@graphql-tools/schema'
+import path from 'path';
 
 const app = express()
 const PORT = 4009
@@ -43,6 +44,7 @@ const executableSchema = makeExecutableSchema({
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static('.'))
 
 // Entrypoint
 app.use('/graphql', graphqlHTTP({
@@ -50,6 +52,10 @@ app.use('/graphql', graphqlHTTP({
     context: data,
     graphiql: true,
 }));
+
+app.get('/', (req, res) => {
+    res.sendFile('./index.html');
+});
 
 app.listen(PORT, () => {
     console.log(`Running a server at: http://localhost:${PORT}/graphql`);
